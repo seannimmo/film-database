@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var loginRequest = LoginRequest()
+    
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        LoginView(loginRequest: loginRequest)
+            .environmentObject(loginRequest)
     }
 }
 
